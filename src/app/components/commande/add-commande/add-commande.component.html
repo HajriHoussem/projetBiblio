@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="col-md-9 colsm-6 col-xs-12">
+    <div class="panel panel-default">
+    <div class="panel-heading"><br><h3>Nouvelle Commande</h3><br>  </div>
+    <div class="panel-body" *ngIf="mode==1">
+    <form #f="ngForm" (ngSubmit)=" OnsaveCommand(f.value)">
+    <div class="form-group">
+    <label class="control-label">ID Client</label>
+    <input class="form-control" type="text" name="id_client" ngModel>
+    </div>
+    <div class="form-group">
+        <label class="control-label">etat</label>
+        <input class="form-control" type="text" name="etat" ngModel>
+        </div>
+    <div class="form-group">
+      <label class="control-label"> montant</label>
+      <input class="form-control" type="text" name="montant" ngModel>
+      </div>
+ 
+        
+            <div class="form-group">
+                <label class="control-label">Date de la commande</label>
+                <input class="form-control" type="date" name="date_commande" ngModel>
+                </div>
+
+             
+        <button class="btn btn-success" type="submit">Enregistrer</button><br><br>
+    </form>
+    </div>
+    <div class="panel-body" *ngIf="mode==2">
+      <div class="form-group">
+      <label>ID Client: </label>
+      <label>{{currentCommand.id_client}}</label>
+      </div>
+
+        <div class="form-group">
+          <label>etat: </label>
+          <label>{{currentCommand.etat}}</label>
+          </div>
+        <div class="form-group">
+          <label>montant: </label>
+          <label>{{currentCommand.montant}}</label>
+          </div>
+       
+            <div class="form-group">
+              <label>Date de la commande: </label>
+              <label>{{currentCommand.date_commande}}</label>
+              </div>
+            
+              
+          <button class="btn btn-success" (click)="OnewCommand()">Ajouter</button><br><br>
+      </div>
+    </div>
+    </div>
+    </div>
+    
+

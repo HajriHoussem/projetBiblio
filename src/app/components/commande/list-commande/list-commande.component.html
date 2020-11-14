@@ -1,0 +1,48 @@
+<div class="section_body">
+    <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+  
+            <div class="col-sm-6">
+              <a routerLink="/dashboard/addcommande" class="btn btn-success" data-toggle="modal"><i
+                  class="material-icons">&#xE147;</i> <span>Ajouter Commandes</span></a>
+  
+            </div>
+          </div>
+        </div>
+        <table class="table table-striped table-hover" *ngIf="commandeall" class="table table-striped">
+          <thead>
+            <tr>
+  
+                <th>ID</th>
+                <th>Date</th>
+                <th>ID Client</th>
+                <th>Etat</th>
+                <th>montant</th>
+        
+             
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let l of commandeall._embedded.commandes">
+              <td>{{l.id_client}}</td>
+              <td>{{l.date_commande}}</td>
+              <td>{{l.id_client}}</td>
+              <td>{{l.etat}}</td>
+              <td>{{l.montant}}</td>
+
+          
+          
+  
+              <td>
+                <a class="edit" data-toggle="modal" ><i class="material-icons"
+                    data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                <a class="delete" data-toggle="modal" > <i class="material-icons"
+                    data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+  
+              </td>
+            </tr>
+            <tr>
+          </tbody>
+        </table>
